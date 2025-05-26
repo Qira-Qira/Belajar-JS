@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="judul">Judul HTML</h1>
+    <div id="content">
+      <p class="deskripsi">Lorem ipsum dolor sit amet.</p>
+    </div>
+    <div id="input">
+      <input type="text" name="name" id="nama" /><br />
+      <button onclick="nama()">Tambahkan</button>
+    </div>
+    <br />
+    <button onclick="ganti()">Klik untuk mengubah</button>
+    <script>
+      const judul = document.getElementById("judul");
+      const deskripsi = document.querySelector(".deskripsi");
+      const teks = document.createElement("p");
+
+      teks.innerText = "SELAMAT DATANG DI DOM";
+      judul.textContent = "Ini judul dari javaScript";
+      deskripsi.textContent = "deskripsi JS";
+
+      function ganti() {
+        judul.textContent = "DOCUMENT OBJECT MODEL";
+        judul.style.color = "crimson";
+        document.getElementById("content").appendChild(teks);
+      }
+
+      function nama() {
+        const nama = document.getElementById("nama").value;
+        const ucapan = document.createElement("p");
+        ucapan.textContent = "Halo, " + nama;
+        document.getElementById("input").appendChild(ucapan);
+      }
+    </script>
+  </body>
+</html>
